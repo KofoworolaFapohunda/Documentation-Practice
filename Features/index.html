@@ -1122,22 +1122,21 @@ This feature currently works well and there is no error caused by it.</p>
 <p>This feature adds the item class “potion” to the game, player can consume 1 potion to gain 5 HP in battle by clinking the button “Heal”. Player have 1 potion at the beginning of the game, and can pick up potions in levels. Player can check how many potions they have in battles.</p>
 <h3 id="implementation-details">Implementation Details:</h3>
 <p>Establish a new class named “HealingItem”, this class inherits the class “Character”. This new class allow the potion to appear in levels, and record how many potions player already have.</p>
-<p>namespace Fall2020_CSC403_Project.code {
-    public class HealingItem : Character {
-        public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
-        }
-        public static int havePotion = 1; <br />
-    }
-}
- Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.
-        private void btnHeal_Click(object sender, EventArgs e) {
-            if (HealingItem.havePotion &gt; 0) { 
-                player.OnHeal(5);
-                UpdateHealthBars();
-                HealingItem.havePotion --;
-                labelpotion.Text = "X " + HealingItem.havePotion.ToString();
-            }</p>
-<div class="highlight"><pre><span></span><code>    }
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>        public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        }
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        public static int havePotion = 1;   
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    }
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>}
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        private void btnHeal_Click(object sender, EventArgs e) {
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>            if (HealingItem.havePotion &gt; 0) { 
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>                player.OnHeal(5);
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                UpdateHealthBars();
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>                HealingItem.havePotion --;
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>                labelpotion.Text = &quot;X &quot; + HealingItem.havePotion.ToString();
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>            }
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>        }
 </code></pre></div>
 <h2 id="experience-system-feature">Experience System Feature.</h2>
 <p>Description:</p>
@@ -1145,9 +1144,9 @@ This feature currently works well and there is no error caused by it.</p>
 <h3 id="implementation-details_1">Implementation Details:</h3>
 <p>Separate the class “BattleCharacters” into “Player” and “Enemy” to distinguish player and enemy, because player can get experience and level up but enemy cannot.</p>
 <p>Add new elements to the class “Player”, the player now have experience system.</p>
-<p>Add new controls in the form “FrmBattle”, so player can get experience in battles.
-player.UpdateExp(1); // Player get 1 Exp when attack.
-player.UpdateExp(10); //Player get 10 Exp when kill.</p>
+<p>Add new controls in the form “FrmBattle”, so player can get experience in battles.</p>
+<p>player.UpdateExp(1); // Player get 1 Exp when attack.</p>
+<p>player.UpdateExp(10); //Player get 10 Exp when kill.</p>
 <p>Add a bar and a label in the form “FrmBattle” to visualize the experience and current level.</p>
 <h2 id="you-win-feature">You Win Feature</h2>
 <p>Description:
@@ -1173,9 +1172,10 @@ The tutorial video was linked to the Url</p>
 <p>The advert feature is to advertise  different games that the players may decide to choose from when he or she finishes the Dr Peanut Game</p>
 <h2 id="implementation-of-the-advert-feature">Implementation of the Advert Feature</h2>
 <p>Created a new form named advert.cs
-Add the picture to the background and all the three buttons named the exit, start and tutorial page
+Add the picture to the background and the exit button at the corner of the picture
+Add the link to and video tutorial page
 This was linked to the program.cs file so that it will appear first
-The exit button uses the application.exit() to shut down the program</p>
+The exit button uses the application.exit() to exit the advert of games incase the player wants to replay the game.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>So far, all the added features are good and there is no code break caused by the features.</p>
 
