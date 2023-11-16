@@ -391,7 +391,7 @@ Verified that the alterations did not introduce any errors or disrupt the existi
 
 This Feature is added to the FrmBattle.cs, FrmBattle.Designer,cs files. It is activated when the user clicks on the Exit button in GameOver Screen to exit the game.Also changed the background for the GameOver Screen to make it look presentable. This feature currently works well and there is no error caused by it.
 
-### Implementation Details for EXit button:
+### Implementation Details for Exit button:
 Button Creation:
 
 Created a new button in YouWin.cs form to manage the action.
@@ -443,23 +443,8 @@ This feature adds the item class “potion” to the game, player can consume 1 
 
 Establish a new class named “HealingItem”, this class inherits the class “Character”. This new class allow the potion to appear in levels, and record how many potions player already have.
 
-```
-        public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
-        }
-        public static int havePotion = 1;   
-    }
-}
  Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.
-        private void btnHeal_Click(object sender, EventArgs e) {
-            if (HealingItem.havePotion > 0) { 
-                player.OnHeal(5);
-                UpdateHealthBars();
-                HealingItem.havePotion --;
-                labelpotion.Text = "X " + HealingItem.havePotion.ToString();
-            }
-            
-        }
-```
+
 ## Experience System Feature.
 
 Description:

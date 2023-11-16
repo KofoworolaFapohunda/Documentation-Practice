@@ -17,3 +17,13 @@ The following features were added to the project
 6. Game Over Feature
 7. Restart Feature
 8. Attack Audio Feature
+9. Welcome Page Feature
+10. Video Tutorial Feature
+11. Advert/ Suggested games
+12. Exit Button
+13. Next Button
+14. Level 2 Feature
+15. Healing item Feature
+16. Experience System Feature
+17. Select Character Feature
+18. Change Theme of the Game
