@@ -567,7 +567,7 @@
         
           <li class="md-nav__item">
   <a href="#implementation-details-for-exit-button" class="md-nav__link">
-    Implementation Details for EXit button:
+    Implementation Details for Exit button:
   </a>
   
 </li>
@@ -1089,7 +1089,7 @@ Code Modification:</p>
 Verified that the alterations did not introduce any errors or disrupt the existing game functionality.</p>
 <h2 id="exit-button-feature">Exit button Feature:</h2>
 <p>This Feature is added to the FrmBattle.cs, FrmBattle.Designer,cs files. It is activated when the user clicks on the Exit button in GameOver Screen to exit the game.Also changed the background for the GameOver Screen to make it look presentable. This feature currently works well and there is no error caused by it.</p>
-<h3 id="implementation-details-for-exit-button">Implementation Details for EXit button:</h3>
+<h3 id="implementation-details-for-exit-button">Implementation Details for Exit button:</h3>
 <p>Button Creation:</p>
 <p>Created a new button in YouWin.cs form to manage the action.
 Implemented click events for the button.
@@ -1122,22 +1122,7 @@ This feature currently works well and there is no error caused by it.</p>
 <p>This feature adds the item class “potion” to the game, player can consume 1 potion to gain 5 HP in battle by clinking the button “Heal”. Player have 1 potion at the beginning of the game, and can pick up potions in levels. Player can check how many potions they have in battles.</p>
 <h3 id="implementation-details">Implementation Details:</h3>
 <p>Establish a new class named “HealingItem”, this class inherits the class “Character”. This new class allow the potion to appear in levels, and record how many potions player already have.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>        public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        }
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        public static int havePotion = 1;   
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    }
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>}
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        private void btnHeal_Click(object sender, EventArgs e) {
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>            if (HealingItem.havePotion &gt; 0) { 
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>                player.OnHeal(5);
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                UpdateHealthBars();
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>                HealingItem.havePotion --;
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>                labelpotion.Text = &quot;X &quot; + HealingItem.havePotion.ToString();
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>            }
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>        }
-</code></pre></div>
+<p>Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.</p>
 <h2 id="experience-system-feature">Experience System Feature.</h2>
 <p>Description:</p>
 <p>This feature allow player to get experience in battles. Player can get 1 point of experience by an attack, and get 10 point by a kill. When the experience reaches max experience, player will be upgraded for more strength, max HP and max EXP.There’s a bar to show how much experience the player have and how much will it take to reach next level. There is a label to show the current level.</p>
