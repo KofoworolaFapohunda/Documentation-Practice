@@ -443,8 +443,7 @@ This feature adds the item class “potion” to the game, player can consume 1 
 
 Establish a new class named “HealingItem”, this class inherits the class “Character”. This new class allow the potion to appear in levels, and record how many potions player already have.
 
-namespace Fall2020_CSC403_Project.code {
-    public class HealingItem : Character {
+```
         public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
         }
         public static int havePotion = 1;   
@@ -460,7 +459,7 @@ namespace Fall2020_CSC403_Project.code {
             }
             
         }
-
+```
 ## Experience System Feature.
 
 Description:
@@ -474,7 +473,9 @@ Separate the class “BattleCharacters” into “Player” and “Enemy” to d
 Add new elements to the class “Player”, the player now have experience system.
        
 Add new controls in the form “FrmBattle”, so player can get experience in battles.
+
 player.UpdateExp(1); // Player get 1 Exp when attack.
+
 player.UpdateExp(10); //Player get 10 Exp when kill.
 
 Add a bar and a label in the form “FrmBattle” to visualize the experience and current level.
@@ -512,9 +513,10 @@ The advert feature is to advertise  different games that the players may decide 
 
 ## Implementation of the Advert Feature
 Created a new form named advert.cs
-Add the picture to the background and all the three buttons named the exit, start and tutorial page
+Add the picture to the background and the exit button at the corner of the picture
+Add the link to and video tutorial page
 This was linked to the program.cs file so that it will appear first
-The exit button uses the application.exit() to shut down the program
+The exit button uses the application.exit() to exit the advert of games incase the player wants to replay the game.
 
 ## Conclusion
 So far, all the added features are good and there is no code break caused by the features.
