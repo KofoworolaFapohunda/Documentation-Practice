@@ -347,5 +347,175 @@ private void Restart_Click(object sender, EventArgs e)
 
 ```
 
+## Select Character Feature: 
+Description:
+The Select Character feature allows users to choose their player character from a list of three options in the FrmSelectCharacter.cs form. Once selected, the chosen character appears in the FrmBattle.cs game, seamlessly integrating with the existing codebase without introducing any errors.
+
+### Implementation Details of Select Character Feature:
+
+Form Creation:
+
+Created a new form named FrmSelectCharacter.cs to manage character selection.
+Integrated picture boxes to visually represent each available character option.
+
+### User Interaction of Select Character Feature :
+
+Enabled user interaction by assigning control to the picture boxes.
+Implemented click events for the picture boxes to detect user selection.
+Dynamic Character Display:
+
+Programmed the functionality to display the selected character in the FrmBattle.cs game.
+Ensured smooth integration with existing codebase.
+
+### Feature to Change the Theme of the Game 
+
+Description:
+The Change Theme feature introduces a new winter theme to the game, transforming the appearance of enemies, the main character, and the game tiles. This enhancement aims to provide a fresh and immersive gaming experience with a winter setting.
+
+### Implementation Details of Changing Theme Feature:
+
+Image Replacement:
+
+Replaced existing images of enemies with winter-themed counterparts to maintain thematic consistency.
+Updated player character images to reflect the winter theme, enhancing visual coherence.
+
+Tile Modification:
+
+Added new winter-themed tiles to the game, contributing to the overall aesthetic transformation.
+Ensured seamless integration of the new tiles into the existing game environment.
+Code Modification:
+
+Updated relevant code sections to accommodate the changes in images and tiles.
+Verified that the alterations did not introduce any errors or disrupt the existing game functionality.
+
+## Exit button Feature:
+
+This Feature is added to the FrmBattle.cs, FrmBattle.Designer,cs files. It is activated when the user clicks on the Exit button in GameOver Screen to exit the game.Also changed the background for the GameOver Screen to make it look presentable. This feature currently works well and there is no error caused by it.
+
+### Implementation Details for EXit button:
+Button Creation:
+
+Created a new button in YouWin.cs form to manage the action.
+Implemented click events for the button.
+Programmed the functionality to be able to exit the game.
+Ensured smooth integration with existing codebase.
+
+Code:
+Application.exit();
+
+## Next Button Feature:
+
+Description:
+The next button feature allowers user to enter the next level after he successfully defeated the enemy.
+
+### Implementation details of Next Button Feature:
+
+Created a new button in Gameover.cs form to manage the action.
+Implemented click funtion events for the button.
+Programmed the functionality to be able to enter the next level of the game.
+Ensured smooth integration with existing codebase.
+
+## Level 2 Feature:
+
+Description:
+The Level 2 Feature allows the user to enter a different level of the game.
+
+### Implementaion Details of Level 2 Feature:
+
+Form Creation:
+
+Created a new form named FrmLevel2.cs to start the level.
+Integarted picture boxes to visulayy represent each available charcters of the level.
+Designed a different theme along with different characters to the form.
+
+Created another Form named FrmBattle2 to manage battles between the Characters.
+
+Programmed the functionality to be enable movemnet of the player.
+Ensured smooth integration with the existing codebase.
+This feature currently works well and there is no error caused by it.
+
+## Healing item Feature
+
+Description:
+
+This feature adds the item class “potion” to the game, player can consume 1 potion to gain 5 HP in battle by clinking the button “Heal”. Player have 1 potion at the beginning of the game, and can pick up potions in levels. Player can check how many potions they have in battles.
+
+### Implementation Details:
+
+Establish a new class named “HealingItem”, this class inherits the class “Character”. This new class allow the potion to appear in levels, and record how many potions player already have.
+
+namespace Fall2020_CSC403_Project.code {
+    public class HealingItem : Character {
+        public HealingItem(Vector2 initPos, Collider collider) : base(initPos, collider){
+        }
+        public static int havePotion = 1;   
+    }
+}
+ Add a new button in the form “FrmBattle”, so player can use the potion to heal in battles.
+        private void btnHeal_Click(object sender, EventArgs e) {
+            if (HealingItem.havePotion > 0) { 
+                player.OnHeal(5);
+                UpdateHealthBars();
+                HealingItem.havePotion --;
+                labelpotion.Text = "X " + HealingItem.havePotion.ToString();
+            }
+            
+        }
+
+## Experience System Feature.
+
+Description:
+
+This feature allow player to get experience in battles. Player can get 1 point of experience by an attack, and get 10 point by a kill. When the experience reaches max experience, player will be upgraded for more strength, max HP and max EXP.There’s a bar to show how much experience the player have and how much will it take to reach next level. There is a label to show the current level.
+
+### Implementation Details:
+
+Separate the class “BattleCharacters” into “Player” and “Enemy” to distinguish player and enemy, because player can get experience and level up but enemy cannot.
+
+Add new elements to the class “Player”, the player now have experience system.
+       
+Add new controls in the form “FrmBattle”, so player can get experience in battles.
+player.UpdateExp(1); // Player get 1 Exp when attack.
+player.UpdateExp(10); //Player get 10 Exp when kill.
+
+Add a bar and a label in the form “FrmBattle” to visualize the experience and current level.
+
+## You Win Feature
+Description:
+Instead of the form “GameOver”, “You Win” shows up when player kills all enemies, and player can choose whether to leave the game or something.
+
+### Implementation Details of You Win Feature:
+
+Add a new Form “YouWin”
+
+## Player Status Feature
+Description:
+Players now can directly check their current HP, EXP and level on the levels.
+
+### Implementation Details:
+
+In the form “FrmLevel”, add 2 bars to show the HP and EXP respectively, add a label to show the current level.
+
+## Welcome Page
+Description
+The welcome page is the first page the player gets to. From the welcome page, the player can either start the game, exit the game or watch a tutorial video on how to navigate the game.
+
+## Implementation of the Welcome Page Feature
+Created a new form named welcome.cs
+Add the picture to the background and all the three buttons named the exit, start and tutorial page
+This was linked to the program.cs file so that it will appear first
+The exit button uses the application.exit() to shut down the program
+The start button was linked to the FrmSelectCharacter.cs
+The tutorial video was linked to the Url
+
+### Advert Feature
+The advert feature is to advertise  different games that the players may decide to choose from when he or she finishes the Dr Peanut Game
+
+## Implementation of the Advert Feature
+Created a new form named advert.cs
+Add the picture to the background and all the three buttons named the exit, start and tutorial page
+This was linked to the program.cs file so that it will appear first
+The exit button uses the application.exit() to shut down the program
+
 ## Conclusion
 So far, all the added features are good and there is no code break caused by the features.
