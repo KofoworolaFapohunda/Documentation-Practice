@@ -346,7 +346,6 @@ private void Restart_Click(object sender, EventArgs e)
 }
 
 ```
-
 ## Select Character Feature: 
 Description:
 The Select Character feature allows users to choose their player character from a list of three options in the FrmSelectCharacter.cs form. Once selected, the chosen character appears in the FrmBattle.cs game, seamlessly integrating with the existing codebase without introducing any errors.
